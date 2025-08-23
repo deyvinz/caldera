@@ -4,15 +4,16 @@
   "description": "Luxury Global Travel Platform - NestJS API",
   "private": true,
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "web"
   ],
   "scripts": {
-    "dev": "pnpm --filter api dev",
-    "build": "pnpm --filter api build",
-    "test": "pnpm --filter api test",
-    "lint": "pnpm --filter api lint",
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
     "format": "prettier --write \"**/*.{ts,js,json,md}\"",
-    "clean": "pnpm --filter api clean"
+    "clean": "pnpm -r clean"
   },
   "devDependencies": {
     "prettier": "^3.1.0"
