@@ -8,12 +8,16 @@
     "web"
   ],
   "scripts": {
-    "dev": "pnpm -r --parallel dev",
-    "build": "pnpm -r build",
+    "build:api": "pnpm --filter api build",
+    "build:web": "pnpm --filter web build",
+    "build:all": "run-p build:api build:web",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
     "format": "prettier --write \"**/*.{ts,js,json,md}\"",
-    "clean": "pnpm -r clean"
+    "clean": "pnpm -r clean",
+    "dev:api": "pnpm --filter api dev",
+    "dev:web": "pnpm --filter web dev",
+    "dev:all": "run-p dev:api dev:web"
   },
   "devDependencies": {
     "prettier": "^3.1.0"
